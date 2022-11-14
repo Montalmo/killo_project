@@ -12,7 +12,8 @@ class Day02 extends StatefulWidget {
 class _Day02State extends State<Day02> {
   final controller = TextEditingController();
 
-  List<bool> _selection = [true, false, false];
+  List<bool> _selection = <bool>[true, false, false];
+  String? tip;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,11 @@ class _Day02State extends State<Day02> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              if (tip != null)
+                Text(
+                  '$tip',
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40.0),
+                ),
               const Text('Total Amount'),
               SizedBox(
                 width: 72.0,
@@ -48,8 +54,11 @@ class _Day02State extends State<Day02> {
                 height: 12.0,
               ),
               ElevatedButton(
-                style:  
-                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.green),
+                ),
+                onPressed: calculateTip,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -73,5 +82,17 @@ class _Day02State extends State<Day02> {
         }
       },
     );
+  }
+
+  void calculateTip() {
+    final totalAmount = double.parse(controller.text);
+    final selctedIndex = _selection.indexWhere((element) => element);
+    final tipPercentstage = [0.1, 0.15, 0.2][selctedIndex];
+
+    final tipTotal = (tipPercentstage * totalAmount).toStringAsFixed(2);
+
+    setState(() {
+      tip = '\$$tipTotal';
+    });
   }
 }
