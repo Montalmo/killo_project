@@ -36,13 +36,14 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(
                 height: 8.0,
               ),
-              widget.currentIndex != null ?
-                Text(
-                  widget.restaurants[widget.currentIndex!],
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: 30.0, fontWeight: FontWeight.w600),
-                ) : const Text(''),
+              widget.currentIndex != null
+                  ? Text(
+                      widget.restaurants[widget.currentIndex!],
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontSize: 32.0, fontWeight: FontWeight.w600),
+                    )
+                  : const Text(''),
               const SizedBox(
                 height: 16.0,
               ),
