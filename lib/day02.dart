@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Day02 extends StatefulWidget {
   const Day02({super.key});
@@ -42,7 +40,7 @@ class _Day02State extends State<Day02> {
                 height: 12.0,
               ),
               ToggleButtons(
-                children: [
+                children: <Text>[
                   Text('10%'),
                   Text('15%'),
                   Text('20%'),
@@ -59,8 +57,8 @@ class _Day02State extends State<Day02> {
                       MaterialStateProperty.all<Color>(Colors.green),
                 ),
                 onPressed: calculateTip,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 16.0,
                     vertical: 8.0,
                   ),

@@ -45,10 +45,10 @@ class _RestRandomState extends State<RestRandom> {
               ),
               ElevatedButton(
                 onPressed: updateIndex,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(
                       vertical: 16.0, horizontal: 32),
-                  child: const Text(
+                  child: Text(
                     'Pick Restaurant',
                     style: TextStyle(fontSize: 16.0),
                   ),
