@@ -5,5 +5,5 @@ import 'package:killo_project/day04.dart';
 // import 'package:killo_project/restaurant_random_page.dart';
 
 void main() {
-  runApp(const Day04());
+  runApp(Day04());
 }

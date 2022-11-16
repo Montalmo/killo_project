@@ -24,7 +24,7 @@ class _Day02State extends State<Day02> {
               if (tip != null)
                 Text(
                   '$tip',
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40.0),
+                  style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 40.0),
                 ),
               const Text('Total Amount'),
               SizedBox(
@@ -32,8 +32,8 @@ class _Day02State extends State<Day02> {
                 child: TextField(
                   controller: controller,
                   textAlign: TextAlign.center,
-                  decoration: InputDecoration(hintText: '\$100.00'),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  decoration: const InputDecoration(hintText: '\$100.00'),
+                  keyboardType: const TextInputType.numberWithOptions(decimal: true),
                 ),
               ),
               const SizedBox(
@@ -41,9 +41,9 @@ class _Day02State extends State<Day02> {
               ),
               ToggleButtons(
                 children: <Text>[
-                  Text('10%'),
-                  Text('15%'),
-                  Text('20%'),
+                  const Text('10%'),
+                  const Text('15%'),
+                  const Text('20%'),
                 ],
                 isSelected: _selection,
                 onPressed: updateSelection,
